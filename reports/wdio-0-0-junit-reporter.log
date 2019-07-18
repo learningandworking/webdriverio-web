@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="webdriver_io_page" timestamp="2019-07-18T17:46:50" time="3.958" tests="1" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="webdriver.io page"/>
+      <property name="capabilities" value="chrome.75_0_3770_142.macosx"/>
+      <property name="file" value="./test/specs/basic.js"/>
+    </properties>
+    <testcase classname="chrome.75_0_3770_142.macosx.webdriver_io_page" name="should_have_the_right_title" time="3.957"/>
+  </testsuite>
+</testsuites>
