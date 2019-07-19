@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "./node_modules/.bin/wdio wdio.conf.js"
+    "test": "rm -rf ./LogOutput ./reports && ./node_modules/.bin/wdio wdio.conf.js"
   },
   "keywords": [],
   "author": "",
