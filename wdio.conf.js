@@ -150,6 +150,7 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
+        require: ['@babel/register'],
         timeout: 60000
     },
     //
@@ -165,8 +166,12 @@ exports.config = {
      * @param {Object} config wdio configuration object
      * @param {Array.<Object>} capabilities list of capabilities details
      */
-    // onPrepare: function (config, capabilities) {
-    // },
+    onPrepare: function (config, capabilities) {
+        const chai = require('chai');
+        global.expect = chai.expect;
+        global.assert = chai.assert;
+        global.should = chai.should();
+    },
     /**
      * Gets executed just before initialising the webdriver session and test framework. It allows you
      * to manipulate configurations depending on the capability or spec.
@@ -182,15 +187,15 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-    before: function (capabilities, specs) {
-        /**
-       * Setup the Chai assertion framework
-       */
-        const chai = require('chai');
-        global.expect = chai.expect;
-        global.assert = chai.assert;
-        global.should = chai.should();
-    },
+    // before: function (capabilities, specs) {
+    //     /**
+    //    * Setup the Chai assertion framework
+    //    */
+    //     const chai = require('chai');
+    //     global.expect = chai.expect;
+    //     global.assert = chai.assert;
+    //     global.should = chai.should();
+    // },
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name
