@@ -1,19 +1,21 @@
+import LogInPage from './LogInPage';
+
+
 export default function HomePage(){
 
-    let locatorElements = {
-        "topLoginBtn" : '$(href="/login")',
-        "topSignUpBtn" : '$(href="/signup")',
-        "centerSignUpBtn" : '$(section[id="hero"] a[href="/signup"])'
-    }
+        let topLoginBtn = $('=Log In');
+        let topSignUpBtn = $('=Sign Up');
+        let centerSignUpBtn = $('section[id="hero"] a[href="/signup"]');
 
-    return Object.freeze({
+
+    return{
         goToLogIn: function(){
-            browser.click(locatorElements.topLoginBtn);
-            browser.sleep(2000);
+            topLoginBtn.click();
+            return LogInPage();
         },
     
         goToSignUp: function() {
-            browser.click(locatorElements.topSignUpBtn);  
+            topSignUpBtn.click();
         }
-    })
+    }
 }

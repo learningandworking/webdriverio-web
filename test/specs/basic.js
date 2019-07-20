@@ -1,18 +1,17 @@
-import {HomePage} from '../pageObjects/HomePage.js';
-
+import HomePage from '../pageObjects/HomePage.js';
+import assert from 'assert';
 
 describe('webdriver.io page', () => {
     let homepage;
     it('should have the right title', () => {
-        //browser.url('/')
+        
         const title = browser.getTitle();
         assert.strictEqual(title, 'Trello');
     });
     it.only("Clicking on Login Button", () => {
         homepage = HomePage();
-        //browser.url('/');
         const title = browser.getTitle();
-        assert.strictEqual(title, 'Trello');
+        assert.equal(title, "Trello");
         homepage.goToLogIn();
 
     })
