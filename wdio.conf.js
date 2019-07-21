@@ -1,3 +1,4 @@
+
 exports.config = {
     //
     // ====================
@@ -6,6 +7,9 @@ exports.config = {
     //
     // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
     // on a remote machine).
+
+    debug: process.env.DEBUG === '1',
+    execArgv: process.env.DEBUG === '1' ? ['--inspect-brk=127.0.0.1:5859'] : [],
     runner: 'local',
     //deprecationWarning: true,
     //
@@ -18,7 +22,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/**/*.spec.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -73,6 +77,7 @@ exports.config = {
         // }
     ],
     outputDir: './' + 'LogOutput',
+    sync: true,
     //
     // ===================
     // Test Configurations
@@ -81,7 +86,7 @@ exports.config = {
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
     logLevels: {
-        webdriver: 'trace'
+        webdriver: 'info'
     },
     //
     // Set specific log levels per logger
@@ -151,7 +156,7 @@ exports.config = {
     mochaOpts: {
         ui: 'bdd',
         require: ['@babel/register'],
-        timeout: 60000
+        timeout: 999999
     },
     //
     // =====

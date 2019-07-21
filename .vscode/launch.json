@@ -7,11 +7,11 @@
         {
             "type": "node",
             "request": "launch",
-            "protocol": "legacy",
+            // "protocol": "legacy",
             "address": "localhost",
             "name": "WebdriverIO",
             "port": 5859,
-            "timeout": 60000,
+            "timeout": 600000,
             "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/wdio",
             "cwd": "${workspaceRoot}",
             "console": "integratedTerminal",
@@ -21,7 +21,7 @@
                 // "wdio '--spec main.js'" (which isn't what you want)
             ],
             "env": {
-                "DEBUG": "0" 
+                "DEBUG": "1" 
                 // use an environment variable to be able
                 // to toggle debug mode on and off
             }
