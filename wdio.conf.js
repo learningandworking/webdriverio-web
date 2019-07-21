@@ -52,29 +52,13 @@ exports.config = {
     //
     capabilities: [
         {
-            // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-            // grid with only 5 firefox instances available you can make sure that not more than
-            // 5 instances get started at a time.
-            maxInstances: 1,
-            //
+            maxInstances: 2,
             browserName: 'chrome',
-            // If outputDir is provided WebdriverIO can capture driver session logs
-            // it is possible to configure which logTypes to include/exclude.
-            // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
-            // excludeDriverLogs: ['bugreport', 'server'],
         },
-        // {
-        //     // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-        //     // grid with only 5 firefox instances available you can make sure that not more than
-        //     // 5 instances get started at a time.
-        //     maxInstances: 1,
-        //     //
-        //     browserName: 'firefox',
-        //     // If outputDir is provided WebdriverIO can capture driver session logs
-        //     // it is possible to configure which logTypes to include/exclude.
-        //     // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
-        //     // excludeDriverLogs: ['bugreport', 'server'],
-        // }
+        {
+            maxInstances: 2,
+            browserName: 'firefox',
+        }
     ],
     outputDir: './' + 'LogOutput',
     sync: true,
@@ -193,13 +177,6 @@ exports.config = {
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
     // before: function (capabilities, specs) {
-    //     /**
-    //    * Setup the Chai assertion framework
-    //    */
-    //     const chai = require('chai');
-    //     global.expect = chai.expect;
-    //     global.assert = chai.assert;
-    //     global.should = chai.should();
     // },
     /**
      * Runs before a WebdriverIO command gets executed.
