@@ -1,4 +1,4 @@
-import webdriverio from 'webdriverio';
+import webdriverio from 'webdriverio'; // show auto suggestion of webdriverio
 import { expect } from 'chai';
 import DashBoardHomePage from './DashboardHomePage';
 
