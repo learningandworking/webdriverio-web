@@ -1,6 +1,6 @@
 import webdriverio from 'webdriverio'; // show auto suggestion of webdriverio
 import { expect } from 'chai';
-import DashBoardHomePage from './DashboardHomePage';
+import DashBoardPage from "../pageObjects/DashboardPage";
 
 
 export default function LogInPage() {
@@ -18,7 +18,9 @@ export default function LogInPage() {
 
     /** Self verfication*/
     (function isAt() {
-        expect(browser.getUrl()).contain('/login');
+        browser.waitUntil(() => {
+            return expect(browser.getUrl()).contain('/login');
+        })
         expect(headLineTxt.getText()).to.be.equal('Log in to Trello');
     })();
 
@@ -39,13 +41,14 @@ export default function LogInPage() {
             }
             return result;
         },
-        goToSetUpDashBoardHomePage: function() {
+        
+        goToDashBoardPage: function(userName, password, isBoardSetUp) {
             login(userName, password);
-            return DashBoardHomePage();
+            return DashBoardPage(isBoardSetUp);
         },
-        goToNonSetUpDashBoardHomePage: function() {
-            login(userName, password);
-            
+
+        goToSignUpPage: function() {
+            return SignUpPage();
         }
 
         

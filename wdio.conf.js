@@ -53,7 +53,7 @@ exports.config = {
     capabilities: [
         {
             maxInstances: 2,
-            browserName: 'chrome',
+            browserName: 'firefox',
         },
         // {
         //     maxInstances: 2,

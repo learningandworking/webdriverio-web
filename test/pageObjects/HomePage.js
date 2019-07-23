@@ -1,4 +1,5 @@
 import LogInPage from './LogInPage';
+import SignUpPage from './SignUpPage';
 
 
 export default function HomePage(){
@@ -16,6 +17,7 @@ export default function HomePage(){
     
         goToSignUp: function() {
             topSignUpBtn.click();
+            return SignUpPage();
         }
     }
 }

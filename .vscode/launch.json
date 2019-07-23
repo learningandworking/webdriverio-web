@@ -11,7 +11,7 @@
             "address": "localhost",
             "name": "WebdriverIO",
             "port": 5859,
-            "timeout": 600000,
+            "timeout": 99999999,
             "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/wdio",
             "cwd": "${workspaceRoot}",
             "console": "integratedTerminal",
