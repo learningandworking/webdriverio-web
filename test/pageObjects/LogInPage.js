@@ -34,8 +34,8 @@ export default function LogInPage() {
             login(userName, password);
             if(!isPassedLogin){
                 browser.waitUntil(() => {
-                    return result = errorTxt.getText() === failedLoginMsg;
-                })
+                    return result = errorTxt.isEnabled() === true;
+                }, 3000, "There is no error msg found")
             }
             return result;
         },
