@@ -140,7 +140,7 @@ exports.config = {
     mochaOpts: {
         ui: 'bdd',
         require: ['@babel/register'],
-        timeout: 999999
+        timeout: 99999999
     },
     //
     // =====
@@ -156,6 +156,7 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      */
     onPrepare: function (config, capabilities) {
+        console.log("OnPrepare: setup library")
         const chai = require('chai');
         global.expect = chai.expect;
         global.assert = chai.assert;
@@ -177,7 +178,11 @@ exports.config = {
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
     before: function (capabilities, specs) {
-        browser.deleteCookies()
+       console.log("before in wdio");
+       console.log("Go to Trello page");
+       browser.url("/");
+       console.log("Maximize windows browser")
+       browser.maximizeWindow();
     },
     /**
      * Runs before a WebdriverIO command gets executed.
@@ -190,14 +195,15 @@ exports.config = {
      * Hook that gets executed before the suite starts
      * @param {Object} suite suite details
      */
-    // beforeSuite: function (suite) {
-    // },
+    beforeSuite: function (suite) {
+        console.log("beforeSuite in wdio")
+    },
     /**
      * Function to be executed before a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
      * @param {Object} test test details
      */
     beforeTest: function (test) {
-        browser.url("/")
+        console.log("beforeTest in wdio")
     },
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
@@ -215,14 +221,16 @@ exports.config = {
      * Function to be executed after a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
      * @param {Object} test test details
      */
-    // afterTest: function (test) {
-    // },
+    afterTest: function (test) {
+        console.log("afteTest in wdio")
+    },
     /**
      * Hook that gets executed after the suite has ended
      * @param {Object} suite suite details
      */
-    // afterSuite: function (suite) {
-    // },
+    afterSuite: function (suite) {
+        console.log("afterSuite in wdio")
+    },
     /**
      * Runs after a WebdriverIO command gets executed
      * @param {String} commandName hook command name
