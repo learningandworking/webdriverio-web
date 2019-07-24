@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import LogInPage from './LogInPage';
+import DashboardPage from './DashboardPage';
 
 export default function SignUpPage() {
 
@@ -11,7 +11,7 @@ export default function SignUpPage() {
     let signInLink = $('="or sign in to your account');
 
     /** Page Properties */
-    let pageHeadline = 'Create a Trello Account'
+    let pageHeadline = 'Create a Trello Account';
 
     /** Self Verification */
     (function isAt(){
@@ -26,8 +26,7 @@ export default function SignUpPage() {
             pwdField.setValue(pwd);
             emailField.setValue(email);
             signUpBtn.click();
-            browser.pause(2000);
-            return LogInPage();
+            return DashboardPage(false);
         }
     }
 }

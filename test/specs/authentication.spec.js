@@ -1,14 +1,14 @@
 import HomePage from '../pageObjects/HomePage.js';
 import { expect } from 'chai';
 
-describe('Login Feature and SignUp Feature', () => {
+describe('Registration and Authentication', () => {
     let homepage, loginpage, signuppage;
 
     before(() => {
         homepage = HomePage();
     })
 
-    describe('Login Specs', () => {
+    describe('Login features', () => {
 
         let invalidAccounts = [
             { "username": null, "password": "trelloweb@yopmail.com", "isValidAccount": false },
@@ -29,11 +29,10 @@ describe('Login Feature and SignUp Feature', () => {
         });
     })
 
-    describe.only('Sign-Up specs', () => {
+    describe.only('Sign-Up features', () => {
         it("User can sign-up and setup board", () => {
             signuppage = homepage.goToSignUp();
-            loginpage = signuppage.signUpData("tre4_yop", "12345678x@X", "tre4@yopmail.com");
-            loginPage.goToDashBoardPage("tre4_yop", "12345678x@X", false);
+            signuppage.signUpData("tre8_yop", "12345678x@X", "tre8@yopmail.com");
         })
     })
 
