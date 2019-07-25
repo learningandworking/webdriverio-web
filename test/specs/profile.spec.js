@@ -2,7 +2,13 @@ import LogInPage from "../pageObjects/LogInPage";
 import HomePage from "../pageObjects/HomePage";
 const path = require('path')
 
-const filePath = path.join(__dirname, '../data/avatar.png');
+const dataObj = {
+    fullName: "Trello web",
+    initials: "usr",
+    userName: "trello_webdriverio",
+    bio: `Hello how are you`,
+    avatarFile: path.join(__dirname, '../data/avatar.png')
+};
 
 describe("Dashboard page", () => {
 
@@ -14,13 +20,13 @@ describe("Dashboard page", () => {
 
     before(() => {
         console.log("before in test spec")
-        console.log("file path", filePath);
+        console.log("file path", dataObj.avatarFile);
         homepage = HomePage();
         dashboardpage = homepage.goToLogIn().goToDashBoardPage(account.email, account.password);
     });
 
     it("login to dashboard page", () => {
         profilepage = dashboardpage.goToProfilePage();
-        profilepage.changeAvatar(filePath)
+        profilepage.changeAboutInfo(1, dataObj)
     })
 })

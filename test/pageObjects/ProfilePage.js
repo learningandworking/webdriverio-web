@@ -1,29 +1,63 @@
-import {expect} from 'chai';
+import { expect } from 'chai';
 
 export default function ProfilePage() {
-    
-    /** Element locators */
 
+    /** Element locators */
+    let aboutFormLoc = $('div ._1JEVWhKPk5LQvc');
+    let avatarLoc = $('div ._8STAxwEhTLw06E ');
 
     /** Self Verification */
-    (function isAt(){
+    (function isAt() {
         browser.waitUntil(() => {
             return $$('a[data-tab="profile"]')[0].getText() === 'Profile and Visibility';
         })
     })();
 
+    function changeAvatar(avatarFile) {
+        avatarLoc.$$('div')[0].moveTo();
+        avatarLoc.$$('div')[0].click();
+        expect($('._1N7TDEoHnIqiCA').getText()).to.be.equal('Change Avatar…');
+        const fileUpload = $('div .H29TL9_OYTQq4F');
+        browser.execute(
+            // assign style to elem in the browser
+            (el) => el.style.display = 'block',
+            // pass in element so we don't need to query it again in the browser
+            fileUpload
+        );
+        fileUpload.waitForDisplayed();
+        fileUpload.setValue(avatarFile);
+    };
+
+    function changePersonalInfo(personalObj) {
+        let {fullName, initials, userName, bio} = personalObj;
+        aboutFormLoc.$$('input')[0].clearValue();
+        aboutFormLoc.$$('input')[0].setValue(fullName);
+        aboutFormLoc.$$('input')[1].clearValue();
+        aboutFormLoc.$$('input')[1].setValue(initials);
+        aboutFormLoc.$$('input')[2].clearValue();
+        aboutFormLoc.$$('input')[2].setValue(userName);
+        aboutFormLoc.$('textarea').clearValue();
+        aboutFormLoc.$('textarea').setValue(bio);
+        aboutFormLoc.$('button').click();
+        browser.pause(5000);
+    }
+
     return {
-        changeAvatar: function (avatarFile) {
-            //browser.pause(200000)
-            $('.rsiNque2CCqtPE').moveTo();
-            $('button._2e97X7K2YRLv4Q').click();
-            expect($('._1N7TDEoHnIqiCA').getText()).to.be.equal('Change Avatar…');
-            browser.pause(3000)
-            //$('span[name="attachment"]').click();
-            //browser.ch
-            const uploadedFile = browser.uploadFile(avatarFile);
-            $$('button._3hhApe7M5RDUB1 span')[0].setValue(uploadedFile)   
-            browser.pause(3000);   
-        }
+        changeAboutInfo: function(changeOption, personalObj){
+           switch(changeOption){
+               case 1:
+                   changePersonalInfo(personalObj);
+                   break;
+                case 2:
+                    let avatar = personalObj.avatarFile;
+                    changeAvatar(avatar);
+                    browser.pause(5000);
+                    break;
+                default:
+                    changePersonalInfo(personalObj);
+                    changeAvatar(personalObj.avatarFile);
+           }
+        },
+
     }
 }
