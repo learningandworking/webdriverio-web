@@ -15,7 +15,7 @@ export default function ProfilePage() {
 
     /**
      * 
-     * @param {*} avatarFile path to avatar file
+     * @param {String} avatarFile path to avatar file
      */
     function changeAvatar(avatarFile) {
         avatarLoc.$$('div')[0].moveTo();
@@ -34,7 +34,7 @@ export default function ProfilePage() {
 
     /**
      * 
-     * @param {*} personalObj client information
+     * @param {Object} personalObj client information
      */
     function changePersonalInfo(personalObj) {
         let {fullName, initials, userName, bio} = personalObj;
@@ -53,8 +53,8 @@ export default function ProfilePage() {
     return {
         /**
          * 
-         * @param {*} changeOption: 1- changePersonalInfo, 2- changeAvatar, default: changeAll
-         * @param {*} personalObj: client information object
+         * @param {number} changeOption: 1- changePersonalInfo, 2- changeAvatar, default: changeAll
+         * @param {object} personalObj: client information object
          */
         changeAboutInfo: function(changeOption, personalObj){
            switch(changeOption){

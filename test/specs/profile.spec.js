@@ -1,4 +1,3 @@
-import LogInPage from "../pageObjects/LogInPage";
 import HomePage from "../pageObjects/HomePage";
 const path = require('path')
 
