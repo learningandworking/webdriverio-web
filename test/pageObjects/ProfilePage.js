@@ -13,6 +13,10 @@ export default function ProfilePage() {
         })
     })();
 
+    /**
+     * 
+     * @param {*} avatarFile path to avatar file
+     */
     function changeAvatar(avatarFile) {
         avatarLoc.$$('div')[0].moveTo();
         avatarLoc.$$('div')[0].click();
@@ -28,6 +32,10 @@ export default function ProfilePage() {
         fileUpload.setValue(avatarFile);
     };
 
+    /**
+     * 
+     * @param {*} personalObj client information
+     */
     function changePersonalInfo(personalObj) {
         let {fullName, initials, userName, bio} = personalObj;
         aboutFormLoc.$$('input')[0].clearValue();
@@ -43,6 +51,11 @@ export default function ProfilePage() {
     }
 
     return {
+        /**
+         * 
+         * @param {*} changeOption: 1- changePersonalInfo, 2- changeAvatar, default: changeAll
+         * @param {*} personalObj: client information object
+         */
         changeAboutInfo: function(changeOption, personalObj){
            switch(changeOption){
                case 1:
