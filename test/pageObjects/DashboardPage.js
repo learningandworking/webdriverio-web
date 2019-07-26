@@ -21,16 +21,16 @@ export default function DashboardPage(isSetUp = true) {
 
         /** Self Verification */
         (function isAtWelcomeBoard() {
+            browser.pause(3000);
             if (isSetUp === false) {
-                //$('.welcome--card').waitForDisplayed();
                 browser.waitUntil(() => {
                     return expect(browser.getUrl()).contain('/welcome');
-                });   
+                }, 5000, "The current Url cannot match condition");   
             }
             else {
                 browser.waitUntil(() => {
                     return expect(browser.getUrl()).contain('/boards');
-                });
+                }, 5000, "The current Url cannot match condition");
             }
             ;
         })();

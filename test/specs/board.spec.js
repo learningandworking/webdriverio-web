@@ -9,16 +9,16 @@ describe('Board Detail Page', () => {
         password: "trelloweb"
     };
     let boardName = "IT";
-    before('Accessing to Dashboard Page', () => {
+    before('BeforeHook in TC: Accessing to Dashboard Page', () => {
         homepage = HomePage();
         dashboardpage = homepage.goToLogIn().goToDashBoardPage(account.email, account.password);
     });
 
-    beforeEach('Go to Board Detail Page', () => {
+    beforeEach('BeforeEachHook in TC: Go to Board Detail Page', () => {
         boarddetail = dashboardpage.goToBoardDetailPage(boardName);
     })
 
-    it("Initial board", () => {
+    it("TC: Initial column cards for a board of a customer", () => {
         boarddetail.intialBoardColumns();
     })
 
