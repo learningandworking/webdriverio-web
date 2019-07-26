@@ -1,6 +1,7 @@
 
 import { expect } from 'chai';
 import ProfilePage from './ProfilePage';
+import BoardDetailPage from './BoardDetailPage';
 
 export default function DashboardPage(isSetUp = true) {
 
@@ -56,6 +57,10 @@ export default function DashboardPage(isSetUp = true) {
             headerMember.Options.profileOpt.click();
             return ProfilePage();
             
+        },
+        goToBoardDetailPage: function(boardName) {
+            $(`.boards-page-board-section div[title=${boardName}]`).click();
+            return BoardDetailPage(boardName);
         }
     };
 }
