@@ -32,7 +32,6 @@ export default function DashboardPage(isSetUp = true) {
                     return expect(browser.getUrl()).contain('/boards');
                 }, 5000, "The current Url cannot match condition");
             }
-            ;
         })();
 
     function chooseBoardType(selectedValue) {

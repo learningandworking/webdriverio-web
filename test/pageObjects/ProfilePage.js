@@ -57,12 +57,12 @@ export default function ProfilePage() {
          * @param {object} personalObj: client information object
          */
         changeAboutInfo: function(changeOption, personalObj){
-           switch(changeOption){
+            let avatar = personalObj.avatarFile;
+            switch(changeOption){
                case 1:
                    changePersonalInfo(personalObj);
                    break;
                 case 2:
-                    let avatar = personalObj.avatarFile;
                     changeAvatar(avatar);
                     browser.pause(5000);
                     break;

@@ -1,6 +1,6 @@
-import webdriverio from 'webdriverio'; // show auto suggestion of webdriverio
 import { expect } from 'chai';
 import DashBoardPage from "../pageObjects/DashboardPage";
+import SignUpPage from "../pageObjects/SignUpPage";
 
 
 export default function LogInPage() {
@@ -12,9 +12,6 @@ export default function LogInPage() {
     let pwdText = $('#password');
     let loginBtn = $('#login');
     let errorTxt = $('#error');
-
-    /** Page properties*/
-    const failedLoginMsg = `There isn't an account for this username`;
 
     /** Self verfication*/
     (function isAt() {

@@ -6,7 +6,7 @@ export default function HomePage(){
 
         let topLoginBtn = $('=Log In');
         let topSignUpBtn = $('=Sign Up');
-        let centerSignUpBtn = $('section[id="hero"] a[href="/signup"]');
+        //let centerSignUpBtn = $('section[id="hero"] a[href="/signup"]');
 
 
     return{

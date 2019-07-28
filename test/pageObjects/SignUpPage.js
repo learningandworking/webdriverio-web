@@ -8,10 +8,10 @@ export default function SignUpPage() {
     let emailField = $('#email');
     let pwdField = $('#password');
     let signUpBtn = $('#signup');
-    let signInLink = $('="or sign in to your account');
+    //let signInLink = $('="or sign in to your account');
 
     /** Page Properties */
-    let pageHeadline = 'Create a Trello Account';
+    //let pageHeadline = 'Create a Trello Account';
 
     /** Self Verification */
     (function isAt(){

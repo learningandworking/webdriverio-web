@@ -22,5 +22,8 @@ describe('Board Detail Page', () => {
         boarddetail.intialBoardColumns();
     })
 
+    it.only("TC: Drag card from ToDo to In-Progress", () => {
+        boarddetail.dragCardItem(1);
+    })
 
 })

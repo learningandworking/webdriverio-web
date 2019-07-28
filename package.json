@@ -27,7 +27,9 @@
     "@wdio/selenium-standalone-service": "^5.11.2",
     "@wdio/spec-reporter": "^5.11.6",
     "@wdio/sync": "^5.11.0",
-    "chai": "^4.2.0"
+    "chai": "^4.2.0",
+    "eslint": "^6.1.0",
+    "eslint-plugin-wdio": "^5.11.0"
   },
   "dependencies": {}
 }
