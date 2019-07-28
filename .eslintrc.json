@@ -6,7 +6,7 @@
     },
     "globals": {
         "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
+        "SharedArrayBuffer": "readonly",
     },
     "parserOptions": {
         "ecmaVersion": 2018,
@@ -14,10 +14,15 @@
     },
     "rules": {},
     "plugins": [
-        "wdio"
+        "wdio",
+        "standard",
+        "promise",
+        "chai-friendly",
+        "chai-expect"
     ],
     "extends": [
         "plugin:wdio/recommended",
-        "eslint:recommended"
+        "eslint:recommended",
+        "standard"
     ]
 }
