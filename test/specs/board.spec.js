@@ -23,7 +23,7 @@ describe('Board Detail Page', () => {
     })
 
     it.only("TC: Drag card from ToDo to In-Progress", () => {
-        boarddetail.dragCardItem(1);
+        boarddetail.dragCardItem(1, 2);
     })
 
 })

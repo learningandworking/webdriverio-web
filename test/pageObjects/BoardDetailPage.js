@@ -96,11 +96,11 @@ export default function BoardDetailPage(boardName) {
             addCardItemForColumn(title, chooseCardColumn(1));
             cancelCreateCardItem();
         },
-        dragCardItem: function (orgColName) {
-            const orgFirstCardItem = chooseCardColumn(orgColName).$$('.js-card-details')[0];
+        dragCardItem: function (orgColIndex, desColIndex) {
+            const orgFirstCardItem = chooseCardColumn(orgColIndex).$$('.js-card-details')[0];
             let orgCardText = orgFirstCardItem.getText();
-            orgFirstCardItem.dragAndDrop(chooseCardColumn(2).$('.js-card-details'));
-            expect(chooseCardColumn(2).getText()).to.contain(orgCardText);
+            orgFirstCardItem.dragAndDrop(chooseCardColumn(desColIndex).$('.js-card-details'));
+            expect(chooseCardColumn(desColIndex).getText()).to.contain(orgCardText);
         }
     }
 
