@@ -30,6 +30,7 @@ export default function BoardDetailPage(boardName) {
         let cardColLoc;
         switch (columnIndex) {
             case 1:
+                console.log("========= Accessing to first column ========")
                 cardColLoc = $$('.js-list-content')[0];
                 break;
             case 2:
@@ -96,11 +97,18 @@ export default function BoardDetailPage(boardName) {
             addCardItemForColumn(title, chooseCardColumn(1));
             cancelCreateCardItem();
         },
-        dragCardItem: function (orgColIndex, desColIndex) {
-            const orgFirstCardItem = chooseCardColumn(orgColIndex).$$('.js-card-details')[0];
-            let orgCardText = orgFirstCardItem.getText();
-            orgFirstCardItem.dragAndDrop(chooseCardColumn(desColIndex).$('.js-card-details'));
-            expect(chooseCardColumn(desColIndex).getText()).to.contain(orgCardText);
+
+        dragCardItem: function (orgColIndex, orgCardItemName, desColIndex) {
+            console.log("========Accessing to darg card 2 =======");
+            let lstCardItem = chooseCardColumn(orgColIndex).$$('.js-card-details');
+            for(let i=0; i < lstCardItem.length; i++){
+                if(lstCardItem[i].getText() === orgCardItemName){
+                    lstCardItem[i].moveTo();
+                    lstCardItem[i].dragAndDrop(chooseCardColumn(desColIndex).$('.js-open-card-composer'));
+                    break;
+                }
+            }
+            expect(chooseCardColumn(desColIndex).getText()).to.contain(orgCardItemName);
         }
     }
 

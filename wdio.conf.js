@@ -60,7 +60,7 @@ exports.config = {
         //     browserName: 'firefox',
         // }
     ],
-    outputDir: './' + 'LogOutput',
+    //outputDir: './' + 'LogOutput',
     sync: true,
     //
     // ===================
@@ -69,26 +69,7 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevels: {
-        webdriver: 'info'
-    },
-    //
-    // Set specific log levels per logger
-    // loggers:
-    // - webdriver, webdriverio
-    // - @wdio/applitools-service, @wdio/browserstack-service, @wdio/devtools-service, @wdio/sauce-service
-    // - @wdio/mocha-framework, @wdio/jasmine-framework
-    // - @wdio/local-runner, @wdio/lambda-runner
-    // - @wdio/sumologic-reporter
-    // - @wdio/cli, @wdio/config, @wdio/sync, @wdio/utils
-    // Level of logging verbosity: trace | debug | info | warn | error | silent
-    // logLevels: {
-    //     webdriver: 'info',
-    //     '@wdio/applitools-service': 'info'
-    // },
-    //
-    // If you only want to run your tests until a specific amount of tests have failed use
-    // bail (default is 0 - don't bail, run all tests).
+    logLevels: 'debug',
     bail: 0,
     //
     // Set a base URL in order to shorten url command calls. If your `url` parameter starts
