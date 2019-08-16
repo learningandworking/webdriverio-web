@@ -2,3 +2,5 @@ node_modules/
 LogOutput/
 reports/
 credentialAccounts/
+allure-report/
+allure-results/

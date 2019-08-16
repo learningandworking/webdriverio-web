@@ -60,7 +60,7 @@ exports.config = {
         //     browserName: 'firefox',
         // }
     ],
-    outputDir: './' + 'LogOutput',
+    // outputDir: './' + 'LogOutput',
     sync: true,
     //
     // ===================
@@ -129,8 +129,13 @@ exports.config = {
     // see also: https://webdriver.io/docs/dot-reporter.html
     reporters: [
         'spec',
-        ['junit', {
-            outputDir: __dirname + '/reports',
+        // ['junit', {
+        //     outputDir: __dirname + '/reports',
+        // }],
+        ['allure', {
+            outputDir: 'allure-results',
+            disableWebdriverStepsReporting: true,
+            disableWebdriverScreenshotsReporting: true,
         }]
     ],
 
