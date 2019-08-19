@@ -5,19 +5,15 @@ describe('Registration and Authentication', () => {
     let homepage, loginpage;
 
     before(() => {
-        console.log("before in test spec")
+        console.log("Access to HomePage")
         homepage = HomePage();
-    })
-    beforeEach(() => {
-        console.log("beforeEach in spec")
-    })
-    afterEach(() => {
-        console.log("afterEach in spec")
-    })
-    after(() => {
-        console.log("after in spec")
-    })
+    });
+
     describe('Login features', () => {
+        homepage = HomePage();
+        beforeEach(() => {
+            loginpage = homepage.goToLogIn();
+        });
 
         let invalidAccounts = [
             { "username": null, "password": "trelloweb@yopmail.com", "isValidAccount": false },

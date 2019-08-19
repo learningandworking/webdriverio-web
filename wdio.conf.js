@@ -1,4 +1,3 @@
-
 exports.config = {
     //
     // ====================
@@ -52,7 +51,7 @@ exports.config = {
     //
     capabilities: [
         {
-            maxInstances: 2,
+            maxInstances: 1,
             browserName: 'chrome',
         },
         // {
@@ -60,11 +59,6 @@ exports.config = {
         //     browserName: 'firefox',
         // }
     ],
-<<<<<<< HEAD
-    // outputDir: './' + 'LogOutput',
-=======
-    //outputDir: './' + 'LogOutput',
->>>>>>> 127ce93badc8d3e322aec674af6fe741154f0c72
     sync: true,
     //
     // ===================
