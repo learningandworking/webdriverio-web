@@ -4,7 +4,7 @@ const path = require('path')
 const dataObj = {
     fullName: "Trello web",
     initials: "usr",
-    userName: "trello_webdriverio",
+    userName: `trello_webdriverio${Math.floor(Math.random() * 1000)}`,
     bio: `Hello how are you`,
     avatarFile: path.join(__dirname, '../data/avatar.png')
 };

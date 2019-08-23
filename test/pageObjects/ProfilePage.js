@@ -59,7 +59,7 @@ export default function ProfilePage() {
         changeAboutInfo: function(changeOption, personalObj){
             let avatar = personalObj.avatarFile;
             switch(changeOption){
-               case 1:
+                case 1:
                    changePersonalInfo(personalObj);
                    break;
                 case 2:
