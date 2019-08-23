@@ -12,25 +12,17 @@ describe('Board Detail Page', () => {
     before('BeforeHook in TC: Accessing to Dashboard Page', () => {
         homepage = HomePage();
         dashboardpage = homepage.goToLogIn().goToDashBoardPage(account.email, account.password);
-    });
-
-    beforeEach('BeforeEachHook in TC: Go to Board Detail Page', () => {
         boarddetail = dashboardpage.goToBoardDetailPage(boardName);
-    })
+    });
 
     it("TC: Initial column cards for a board of a customer", () => {
         boarddetail.intialBoardColumns();
     })
 
-<<<<<<< HEAD
     it("TC: Drag card from ToDo to In-Progress", () => {
-        boarddetail.dragCardItem(1, 2);
-=======
-    it.only("TC: Drag card from ToDo to In-Progress", () => {
-        boarddetail.dragCardItem(1, "Todo2", 2);
+        boarddetail.dragCardItem(1, "ToDO item 1", 2);
         browser.pause(3000);
 
->>>>>>> 127ce93badc8d3e322aec674af6fe741154f0c72
     })
 
 })
